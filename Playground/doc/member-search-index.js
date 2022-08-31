@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"de.cbw.oca.aufgaben.aufgabe3","c":"DiceCup","l":"roll()"},{"p":"de.cbw.oca.aufgaben.aufgabe3","c":"DiceCup","l":"roll(int)"}];updateSearchResults();

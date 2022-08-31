@@ -37,4 +37,40 @@ public class Person {
 	public int getId() {
 		return id;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Person [id=")
+				.append(id)
+				.append(", firstName=")
+				.append(firstName)
+				.append(", lastName=")
+				.append(lastName)
+				.append("]");
+		return builder.toString();
+	}
+
+//	@Override
+//	public String toString() {
+//		StringBuilder builder = new StringBuilder();
+//		builder.append("Person [id=");
+//		builder.append(id);
+//		builder.append(", firstName=");
+//		builder.append(firstName);
+//		builder.append(", lastName=");
+//		builder.append(lastName);
+//		builder.append("]");
+//		return builder.toString();
+//	}
+	
+	
+	
+	
+//	@Override
+//	public String toString() {
+//		return firstName + " " + lastName + ", ID: " + id; 
+//	}
+	
+	
 }

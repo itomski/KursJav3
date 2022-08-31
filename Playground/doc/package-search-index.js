@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.cbw.oca.aufgaben.aufgabe3"}];updateSearchResults();

@@ -1,8 +1,15 @@
 package de.cbw.oca.playground;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
-public class Person {
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+// Comparable == vergleichbar
+public class Person implements Comparable<Person> {
 	
 	private String firstName;
 	private String lastName;
@@ -51,5 +58,63 @@ public class Person {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+//	@Override
+//	public String toString() {
+//		StringBuilder builder = new StringBuilder();
+//		builder.append("Person [firstName=");
+//		builder.append(firstName);
+//		builder.append(", lastName=");
+//		builder.append(lastName);
+//		builder.append(", birthDate=");
+//		builder.append(birthDate);
+//		builder.append(", active=");
+//		builder.append(active);
+//		builder.append("]");
+//		return builder.toString();
+//	}
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+	}
+
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(active, birthDate, firstName, lastName);
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		
+//		if (obj == null)
+//			return false;
+//		
+//		if (getClass() != obj.getClass())
+//			return false;
+//		
+//		Person other = (Person) obj;
+//		return active == other.active && Objects.equals(birthDate, other.birthDate)
+//				&& Objects.equals(firstName, other.firstName) && Objects.equals(lastName, other.lastName);
+//	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		System.out.println("EQUALS");
+		return EqualsBuilder.reflectionEquals(this, obj);
+	}
+	
+	@Override
+	public int hashCode() {
+		System.out.println("HASHCODE");
+		return HashCodeBuilder.reflectionHashCode(this);
+	}
+
+	@Override
+	public int compareTo(Person other) {
+		return lastName.compareTo(other.lastName);
 	}
 }

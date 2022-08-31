@@ -1,5 +1,6 @@
 package de.cbw.projects.management;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -11,7 +12,7 @@ public class App {
 										+ "\n-------------------------------------\n";
 	
 	
-	private Person[] personal = new Person[100];
+	private ArrayList<Person> personal = new ArrayList<>();
 	
 	// System.out = Outputstream
 	private Scanner scanner = new Scanner(System.in); // System.in = Inputstream
@@ -33,7 +34,7 @@ public class App {
 			switch(scanner.nextLine().trim().toLowerCase()) {
 				
 				case "n":
-					personal[nextFreeIndex()] = createPerson();
+					personal.add(createPerson());
 					System.out.println();
 					break;
 					
@@ -44,7 +45,7 @@ public class App {
 				case "help":
 				case "h":
 					System.out.println(KEYS);
-					break;
+					break;						
 					
 				case "x":
 					break app;
@@ -68,14 +69,14 @@ public class App {
 		return new Person(firstName, lastName);
 	}
 	
-	private int nextFreeIndex() {
-		
-		for(int i = 0; i < personal.length; i++) {
-			if(personal[i] == null)
-				return i;
-		}
-		return -1;
-	}
+//	private int nextFreeIndex() {
+//		
+//		for(int i = 0; i < personal.length; i++) {
+//			if(personal[i] == null)
+//				return i;
+//		}
+//		return -1;
+//	}
 	
 	private void showPersonal() {
 		
@@ -84,10 +85,13 @@ public class App {
 		
 		for(Person p : personal) {
 			
-			if(p == null)
-				break;
+//			if(p == null)
+//				break;
 			
-			System.out.println(p.getFirstName() + " " + p.getLastName());
+			//System.out.println(p.getFirstName() + " " + p.getLastName());
+			
+			System.out.println(p);
+			
 		}
 		
 		System.out.println();

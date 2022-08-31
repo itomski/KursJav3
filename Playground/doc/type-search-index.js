@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"de.cbw.oca.aufgaben.aufgabe3","l":"DiceCup"}];updateSearchResults();
