@@ -14,9 +14,20 @@ public class App {
 		
 		try {
 			
-//			Product p = new Product("Zange", "Super Zange...", 15.99, 200);
+//			Product p = new Product("Andere Zange", "Super Zange...", 19.99, 100);
 //			service.create(p);
+//			System.out.println(p.getId());
 			
+//			if(service.delete(3)) {
+//				System.out.println("Datensatz gelöscht...");
+//			}
+			
+			Product p1 = service.find(1);
+			p1.setName("Spezial Hammer");
+			p1.setPrice(49.99);
+			p1.setCount(10);
+			
+			service.save(p1);
 			
 			List<Product> data = service.find();
 			
