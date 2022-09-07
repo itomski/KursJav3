@@ -4,6 +4,6 @@ module de.lubowiecki.fxproducts {
 	requires javafx.base;
 	requires java.sql;
 
-    opens de.lubowiecki.fxproducts to javafx.fxml;
+    opens de.lubowiecki.fxproducts;
     exports de.lubowiecki.fxproducts;
 }

@@ -50,6 +50,10 @@ public class ProductService {
 		}
 	}
 	
+	public boolean delete(Product p) throws SQLException {
+		return delete(p.getId());
+	}
+	
 	public boolean delete(int id) throws SQLException {
 		
 		String sql = "DELETE FROM " + TABLE_NAME + " WHERE id = " + id;
