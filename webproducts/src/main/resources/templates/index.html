@@ -24,6 +24,7 @@
 							<th>Beschreibung</th>
 							<th>Preis</th>
 							<th>Anzahl</th>
+							<th>&nbsp;</th>
 						</tr>
 					</thead>
 					
@@ -34,6 +35,10 @@
 							<td th:text="${p.description}"></td>
 							<td th:text="${p.price}"></td>
 							<td th:text="${p.count}"></td>
+							<td>
+								<a th:href="@{/edit/{id}(id = ${p.id})}" class="btn btn-warning">EDIT</a>
+								<a th:href="@{/delete/{id}(id = ${p.id})}" class="btn btn-danger">DELETE</a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
